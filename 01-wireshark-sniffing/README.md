@@ -22,15 +22,21 @@ Dalam proyek ini, saya melakukan sniffing terhadap login form pada situs HTTP un
 ---
 
 ## 📌 Langkah Praktik
-1. Buka Wireshark di Kali Linux: 'sudo wireshark'
-2. Pilih interface aktif (disini menggunakan 'eth0')
-3. Kunjungi situs: 'http://testphp.vulnweb.com/login.php'
-4. Login menggunakan:
+1. Buka Wireshark di Kali Linux:
+   ```bash
+   sudo wireshark
+   ```
+3. Pilih interface aktif (disini menggunakan 'eth0')
+4. Kunjungi situs: 'http://testphp.vulnweb.com/login.php'
+5. Login menggunakan:
    - Username: 'user'
    - Password: 'user'
-5. Kembali ke Wireshark, filter dengan: http.request.method == "POST"
-6. Klik kanan pada salah satu paket → Follow → HTTP Stream
-7. Analisis isi paket, terlihat data: 'uname=user&pass=user'
+6. Kembali ke Wireshark, filter dengan: 
+   ```http
+   http.request.method == "POST"
+   ```
+8. Klik kanan pada salah satu paket → Follow → HTTP Stream
+9. Analisis isi paket, terlihat data: 'uname=user&pass=user'
 
 ---
 
